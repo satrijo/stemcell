@@ -111,13 +111,27 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} StemCell.my. Content for educational purposes only.
-          </p>
+          <div className="space-y-2 text-center md:text-left">
+            <p className="text-xs text-slate-500">
+              © 2026 StemCell.my. All rights reserved.
+            </p>
+            <p className="text-xs text-slate-600">
+              Powered by{" "}
+              <a
+                href="https://daikimedia.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 transition-colors hover:text-teal-400"
+              >
+                Daiki Media
+              </a>
+              . All rights reserved.
+            </p>
+          </div>
           <p className="text-xs text-slate-600 max-w-xl text-center md:text-right leading-relaxed">
-            <strong className="text-slate-500">Medical Disclaimer:</strong> Information on StemCell.my is
-            for educational purposes only and does not substitute professional medical advice. Consult a
-            qualified healthcare provider regulated by Malaysia MOH before starting any treatment.
+            <strong className="text-slate-500">Medical Disclaimer:</strong> Information on StemCell.my does
+            not replace advice from a qualified healthcare provider regulated by Malaysia MOH. Always seek
+            professional assessment before starting any treatment.
           </p>
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function ClinicHomepage() {
         <Image src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=2000&q=88&auto=format&fit=crop" alt="Doctor speaking with a patient during a medical consultation" fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071f1e]/95 via-[#0d3532]/75 to-[#071f1e]/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071f1e]/80 via-transparent to-[#071f1e]/25" />
-        <div className="relative mx-auto flex min-h-[48rem] max-w-7xl flex-col justify-end px-5 pb-10 pt-32 sm:px-8 sm:pb-14 lg:min-h-[52rem] lg:px-10 lg:pb-16">
+        <div className="relative z-10 mx-auto flex min-h-[48rem] max-w-7xl flex-col justify-end px-5 pb-10 pt-32 sm:px-8 sm:pb-14 lg:min-h-[52rem] lg:px-10 lg:pb-16">
           <div className="max-w-3xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] backdrop-blur-md"><span className="h-1.5 w-1.5 rounded-full bg-teal-300" />Stem cell care · Malaysia</p>
             <h1 className="mt-7 text-[clamp(3.25rem,7.2vw,6.8rem)] font-semibold leading-[0.92] tracking-[-0.065em] [text-wrap:balance]">Care that begins with <em className="font-serif font-normal text-teal-200">clarity.</em></h1>
