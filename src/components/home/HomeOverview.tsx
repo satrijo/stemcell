@@ -55,8 +55,8 @@ export function HomeOverview() {
 
           <article className="relative min-h-[27rem] overflow-hidden rounded-xl bg-[var(--ink)] lg:col-span-4">
             <Image
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&q=86&auto=format&fit=crop"
-              alt="Healthcare professional discussing a treatment plan with a patient"
+              src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              alt="Doctor consulting with a patient using a tablet in a modern clinic"
               fill
               sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover"

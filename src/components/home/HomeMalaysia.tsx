@@ -46,8 +46,8 @@ export function HomeMalaysia() {
           </div>
           <div className="relative min-h-[31rem] lg:min-h-[44rem]">
             <Image
-              src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=1400&q=86&auto=format&fit=crop"
-              alt="Modern private hospital corridor in Malaysia"
+              src="https://images.pexels.com/photos/179956/pexels-photo-179956.jpeg?auto=compress&cs=tinysrgb&w=1400"
+              alt="Petronas Twin Towers and skybridge in Kuala Lumpur, Malaysia"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"

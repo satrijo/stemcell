@@ -75,7 +75,7 @@ export const learningGuides = [
     description: "A plain-language guide to the cells, their properties, and the main types used in research and care.",
     href: "/what-are-stem-cells/",
     image:
-      "https://images.unsplash.com/photo-1576671081837-49000212a370?w=1000&q=84&auto=format&fit=crop",
+      "https://images.pexels.com/photos/4226219/pexels-photo-4226219.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     label: "Treatment literacy",
@@ -83,7 +83,7 @@ export const learningGuides = [
     description: "Follow the assessment, collection or sourcing, processing, administration, and follow-up journey.",
     href: "/what-is-stem-cell-therapy/",
     image:
-      "https://images.unsplash.com/photo-1581595219315-a187dd40c322?w=1000&q=84&auto=format&fit=crop",
+      "https://images.pexels.com/photos/37036967/pexels-photo-37036967.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
   {
     label: "Safety",
@@ -91,7 +91,7 @@ export const learningGuides = [
     description: "Understand common effects, uncommon complications, serious risks, and warning signs in clinic claims.",
     href: "/stem-cell-therapy-side-effects/",
     image:
-      "https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=1000&q=84&auto=format&fit=crop",
+      "https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg?auto=compress&cs=tinysrgb&w=1000",
   },
 ] as const;
 

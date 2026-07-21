@@ -15,23 +15,23 @@ const assurances = [
 
 const heroSlides = [
   {
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=2200&q=88&auto=format&fit=crop",
-    alt: "Medical researcher examining samples under microscope in a laboratory",
+    src: "https://images.pexels.com/photos/8442571/pexels-photo-8442571.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Two laboratory researchers working at microscopes in a clean white research facility",
     position: "center",
   },
   {
-    src: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=2200&q=88&auto=format&fit=crop",
-    alt: "Doctor consulting with a patient in a modern clinic",
+    src: "https://images.pexels.com/photos/3938022/pexels-photo-3938022.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Scientist in white coat and blue gloves examining a sample under a microscope",
     position: "center",
   },
   {
-    src: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=2200&q=88&auto=format&fit=crop",
-    alt: "Healthcare professional reviewing medical data",
+    src: "https://images.pexels.com/photos/5726794/pexels-photo-5726794.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Scientist in full protective equipment working in a laboratory with warm lighting",
     position: "center",
   },
   {
-    src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=2200&q=88&auto=format&fit=crop",
-    alt: "Laboratory scientist working with stem cell samples",
+    src: "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=2200",
+    alt: "Smiling doctor in white coat walking through a modern hospital corridor",
     position: "center",
   },
 ] as const;
