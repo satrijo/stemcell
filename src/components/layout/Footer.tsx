@@ -1,137 +1,101 @@
 import Link from "next/link";
-import { Dna } from "lucide-react";
+import { ArrowUpRight, Dna } from "lucide-react";
 
-const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-);
-const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-);
-const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-);
-const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-);
+const footerGroups = [
+  {
+    title: "Learn",
+    links: [
+      ["Education hub", "/stem-cell-education/"],
+      ["What are stem cells?", "/what-are-stem-cells/"],
+      ["How therapy works", "/what-is-stem-cell-therapy/"],
+      ["Types of stem cells", "/types-of-stem-cells/"],
+      ["Benefits and evidence", "/stem-cell-therapy-benefits/"],
+    ],
+  },
+  {
+    title: "Explore care",
+    links: [
+      ["All conditions", "/treatments-conditions/"],
+      ["Stem cell transplant", "/stem-cell-transplant/"],
+      ["Knee and joint", "/stem-cell-therapy-knee-malaysia/"],
+      ["Neurological conditions", "/stem-cell-therapy-neurological-disorders-malaysia/"],
+      ["Stem cell banking", "/stem-cell-banking-malaysia/"],
+    ],
+  },
+  {
+    title: "Plan safely",
+    links: [
+      ["Malaysia overview", "/stem-cell-therapy-malaysia/"],
+      ["Verify a clinic", "/verify-stem-cell-clinic-malaysia/"],
+      ["Legal context", "/is-stem-cell-therapy-legal-malaysia/"],
+      ["Costs in Malaysia", "/stem-cell-therapy-cost-malaysia/"],
+      ["Research in Malaysia", "/stem-cell-research-malaysia/"],
+    ],
+  },
+] as const;
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-16 pb-10 border-t border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-14">
-
-          {/* Logo & tagline — spans 2 cols */}
-          <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="bg-teal-600 p-2 rounded-lg group-hover:bg-teal-700 transition-colors">
-                <Dna className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold text-lg tracking-tight text-white">
-                StemCell<span className="text-teal-400">.my</span>
+    <footer className="bg-[var(--ink)] text-white">
+      <div className="site-frame py-16 sm:py-20">
+        <div className="grid gap-14 border-b border-white/15 pb-16 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <p className="eyebrow text-[var(--accent-pale)]">StemCell.my</p>
+            <h2 className="mt-5 max-w-4xl text-[clamp(2.75rem,6vw,6rem)] font-medium leading-[0.94] tracking-[-0.05em] text-pretty">
+              Bring better questions to your next conversation.
+            </h2>
+          </div>
+          <div className="lg:col-span-4 lg:flex lg:justify-end">
+            <Link
+              href="/consultation/"
+              className="inline-flex min-h-12 items-center gap-4 rounded-full bg-[var(--accent)] px-2 pl-6 text-sm font-semibold text-white transition-colors hover:bg-[var(--accent-dark)]"
+            >
+              Prepare a consultation
+              <span className="flex size-9 items-center justify-center rounded-full bg-white text-[var(--ink)]">
+                <ArrowUpRight aria-hidden="true" className="size-4" />
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              Malaysia&apos;s trusted guide to stem cell therapy. Evidence-based
-              information, verified clinics, and expert guidance — all in one place.
-            </p>
-            <div className="flex items-center gap-3 pt-1">
-              {[FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  className="text-slate-500 hover:text-teal-400 transition-colors p-1.5 rounded-md hover:bg-slate-800"
-                >
-                  <Icon className="h-4 w-4" />
-                </Link>
-              ))}
-            </div>
           </div>
-
-          {/* Treatments */}
-          <div>
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Treatments</h3>
-            <ul className="space-y-3">
-              {[
-                ["Knee & Osteoarthritis", "/stem-cell-therapy-knee-malaysia/"],
-                ["Hair Loss Recovery", "/stem-cell-hair-treatment-malaysia/"],
-                ["Facial Rejuvenation", "/stem-cell-facial-treatment-malaysia/"],
-                ["Anti-Aging Therapy", "/stem-cell-anti-aging-therapy-malaysia/"],
-                ["All Treatments", "/treatments-conditions/"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link href={href} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Education */}
-          <div>
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Education</h3>
-            <ul className="space-y-3">
-              {[
-                ["What Are Stem Cells?", "/what-are-stem-cells/"],
-                ["How Treatment Works", "/what-is-stem-cell-therapy/"],
-                ["Treatment Cost Guide", "/stem-cell-therapy-cost-malaysia/"],
-                ["Best Clinics Guide", "/best-stem-cell-clinics-malaysia/"],
-                ["Therapy in Malaysia", "/stem-cell-therapy-malaysia/"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link href={href} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company & Legal */}
-          <div>
-            <h3 className="text-white text-xs font-bold uppercase tracking-widest mb-5">Company</h3>
-            <ul className="space-y-3">
-              {[
-                ["About Us", "/about"],
-                ["Contact", "/contact"],
-                ["Privacy Policy", "/privacy-policy"],
-                ["Terms of Use", "/terms"],
-                ["Medical Disclaimer", "/medical-disclaimer"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link href={href} className="text-sm text-slate-400 hover:text-teal-400 transition-colors">
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="space-y-2 text-center md:text-left">
-            <p className="text-xs text-slate-500">
-              © 2026 StemCell.my. All rights reserved.
-            </p>
-            <p className="text-xs text-slate-600">
-              Powered by{" "}
-              <a
-                href="https://daikimedia.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 transition-colors hover:text-teal-400"
-              >
-                Daiki Media
-              </a>
-              . All rights reserved.
+        <div className="grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-5">
+          <div className="space-y-6 lg:col-span-2">
+            <Link href="/" className="inline-flex items-center gap-3 rounded-md">
+              <span className="flex size-10 items-center justify-center rounded-full bg-white text-[var(--ink)]">
+                <Dna aria-hidden="true" className="size-5" strokeWidth={1.8} />
+              </span>
+              <span className="text-lg font-semibold tracking-[-0.035em]">
+                StemCell<span className="text-[var(--accent-pale)]">.my</span>
+              </span>
+            </Link>
+            <p className="max-w-sm text-sm leading-7 text-white/52">
+              An independent, evidence-conscious guide to stem cell science, treatment
+              pathways, provider checks, and consultation preparation in Malaysia.
             </p>
           </div>
-          <p className="text-xs text-slate-600 max-w-xl text-center md:text-right leading-relaxed">
-            <strong className="text-slate-500">Medical Disclaimer:</strong> Information on StemCell.my does
-            not replace advice from a qualified healthcare provider regulated by Malaysia MOH. Always seek
-            professional assessment before starting any treatment.
+
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="eyebrow text-[var(--accent-pale)]">{group.title}</h3>
+              <ul className="mt-6 space-y-3">
+                {group.links.map(([label, href]) => (
+                  <li key={href}>
+                    <Link href={href} className="text-sm text-white/55 transition-colors hover:text-white">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-5 border-t border-white/15 pt-7 text-xs leading-5 text-white/38 md:flex-row md:items-start md:justify-between">
+          <p>© 2026 StemCell.my · Powered by Daiki Media</p>
+          <p className="max-w-2xl md:text-right">
+            Information on this site does not replace advice from a qualified healthcare
+            provider. Treatment suitability, risks, availability, and outcomes require an
+            individual clinical assessment.
           </p>
         </div>
       </div>

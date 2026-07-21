@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import FloatingWhatsApp from "@/components/shared/FloatingWhatsApp";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const monaSans = localFont({
+  variable: "--font-mona-sans",
+  display: "swap",
+  src: [
+    { path: "./fonts/mona-regular.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/mona-medium.ttf", weight: "500", style: "normal" },
+    { path: "./fonts/mona-semibold.ttf", weight: "600", style: "normal" },
+    { path: "./fonts/mona-bold.ttf", weight: "700", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -83,7 +84,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${monaSans.variable} antialiased`}>
         {children}
         <FloatingWhatsApp />
       </body>

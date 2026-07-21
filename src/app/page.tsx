@@ -5,7 +5,7 @@ import ClinicHomepage from "@/components/home/ClinicHomepage";
 export default function Home() {
   return (
     <>
-      <Navbar overlay />
+      <Navbar />
       <ClinicHomepage />
       <Footer />
     </>

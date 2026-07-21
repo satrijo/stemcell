@@ -1,164 +1,117 @@
 # StemCell.my Design System
 
-## 0. Research Log
-- Existing UI audit: current 21-section homepage, shared teal components, and Playwright evidence at 1280px and 375px.
-- Sheet audit: the Google Sheet defines SEO/content intent and explicitly withholds success-rate and banking-price pages until evidence exists.
-- Reference synthesis: Doxy and Grove supplied the editorial split hero, calm white space, serif emphasis, large photography, and restrained clinical rhythm.
-- Clinic-direction research: patient-journey and modern private-clinic references reinforced a clinic-first flow of concern → treatment pathway → safety → consultation, with photography used to humanise care rather than imply unsupported credentials.
-- Skipped lanes: live reference cloning and image generation — the project already has usable Unsplash imagery and the redesign is constrained by existing content.
-
 ## 1. Atmosphere & Identity
-StemCell.my should feel like a premium, patient-first clinic experience: warm, calm, photographic, and persuasive without hype. The homepage is clinic-first with education as its trust layer. The signature is a teal “evidence rail” that guides visitors from a concern to a treatment pathway, a safety check, or a consultation without inventing clinical credentials.
+
+StemCell.my feels like a calm, independent medical navigator: clinically precise without looking sterile, reassuring without making promises. The visual contract comes from `ref/themejunction.net/html/bexon/demo/index-2.html` and its `home-2.webp` preview, reinterpreted for patient education rather than copied as a business template. Its signature is a framed photographic hero followed by an asymmetric editorial grid of quiet mineral surfaces.
 
 ## 2. Color
 
-### Palette
-| Role | Token | Light | Usage |
-|---|---|---|---|
-| Surface / primary | `--surface-primary` | `#FFFFFF` | Page and hero background |
-| Surface / secondary | `--surface-secondary` | `#F6FAF9` | Quiet information bands |
-| Surface / elevated | `--surface-elevated` | `#FFFFFF` | Cards and menus |
-| Text / primary | `--text-primary` | `#0F172A` | Headings and high-priority copy |
-| Text / secondary | `--text-secondary` | `#475569` | Body and explanations |
-| Text / tertiary | `--text-tertiary` | `#64748B` | Metadata and supporting labels |
-| Border / default | `--border-default` | `#D7E4E1` | Navigation, cards, dividers |
-| Border / subtle | `--border-subtle` | `#E8F0EE` | Quiet section separation |
-| Accent / primary | `--accent-primary` | `#0D9488` | Links, focus, primary actions |
-| Accent / hover | `--accent-hover` | `#0F766E` | Hover and active states |
-| Accent / pale | `--accent-pale` | `#CCFBF1` | Tags, evidence rails, soft highlights |
-| Caution | `--status-warning` | `#B45309` | Uncertainty and verification notes |
-| Dark information | `--surface-information` | `#123C3A` | Purposeful evidence panels only |
+| Role | Token | Value | Usage |
+|---|---|---:|---|
+| Canvas | `--canvas` | `#ecf0f0` | Page background |
+| Surface | `--surface` | `#ffffff` | Navigation and cards |
+| Surface soft | `--surface-soft` | `#d8e5e5` | Editorial panels |
+| Ink | `--ink` | `#0c1e21` | Primary headings and dark sections |
+| Text | `--text` | `#364e52` | Body copy |
+| Muted | `--muted` | `#67787a` | Metadata and secondary copy |
+| Border | `--border` | `#c9d1d1` | Dividers and controls |
+| Accent | `--accent` | `#1e8a8a` | Links, buttons, active states |
+| Accent dark | `--accent-dark` | `#116969` | Hover and accessible small text |
+| Accent pale | `--accent-pale` | `#cee0e0` | Selected and supporting surfaces |
+| On dark | `--on-dark` | `#f7fbfa` | Text on ink surfaces |
+| Warning | `--warning` | `#9a5b21` | Medical caveats only |
 
-### Rules
-- Teal is semantic: it marks a path, source, action, or verification step. It is not a decorative gradient.
-- The default inner-page navbar uses the primary surface and primary text. The homepage may use the `overlay` navbar variant over a darkened full-bleed hero; links must switch to dark text after scroll.
-- Dark information panels are limited to evidence and safety literacy, never generic marketing sections.
+Accent is functional, not decorative confetti. Photography carries atmosphere; color carries hierarchy and action.
 
 ## 3. Typography
 
-### Scale
-| Level | Size | Weight | Line Height | Usage |
-|---|---|---:|---:|---|
-| Display | `clamp(2.75rem, 6vw, 5.75rem)` | 700 | 0.98 | Hero headline |
-| H1 | `clamp(2.25rem, 4vw, 4rem)` | 700 | 1.05 | Major section headline |
-| H2 | `clamp(1.75rem, 3vw, 3rem)` | 650 | 1.12 | Section headline |
-| H3 | `1.375rem` | 650 | 1.3 | Card and panel title |
-| Body large | `1.125rem` | 400 | 1.65 | Hero and section lead |
-| Body | `1rem` | 400 | 1.6 | Default copy |
-| Body small | `0.875rem` | 400 | 1.5 | Supporting copy |
-| Caption | `0.75rem` | 600 | 1.4 | Metadata and labels |
+Mona Sans is self-hosted from `ref/` via `next/font/local`; system sans is the fallback. The reference's moderate weights are retained to avoid the over-bold startup look.
 
-### Font Stack
-- Primary: Geist Sans from `next/font/google`.
-- Serif accent: Georgia for short italic editorial emphasis only.
-- Maximum two families; no new font dependency.
-
-### Rules
-- Use `text-wrap: balance` for headings and `text-wrap: pretty` for prose where supported.
-- Keep body copy around 65 characters per line.
-- Use sentence case for headings. Small caps are reserved for section labels.
+| Role | Size | Weight | Line height | Tracking |
+|---|---|---:|---:|---:|
+| Display | `clamp(3rem, 7vw, 6.75rem)` | 500 | 0.92 | -0.055em |
+| Section | `clamp(2.35rem, 4.6vw, 4.75rem)` | 500 | 0.98 | -0.045em |
+| Card title | `clamp(1.4rem, 2vw, 2rem)` | 500 | 1.12 | -0.025em |
+| Lead | `clamp(1.05rem, 1.5vw, 1.25rem)` | 400 | 1.6 | -0.01em |
+| Body | `1rem` | 400 | 1.7 | 0 |
+| Small | `0.875rem` | 500 | 1.5 | 0 |
+| Eyebrow | `0.6875rem` | 700 | 1.2 | 0.16em |
 
 ## 4. Spacing & Layout
 
-### Base Unit
-All spacing derives from 4px.
-
-| Token | Value | Usage |
-|---|---:|---|
-| `--space-2` | 8px | Icon and label gap |
-| `--space-4` | 16px | Compact control padding |
-| `--space-6` | 24px | Card padding |
-| `--space-8` | 32px | Card group gap |
-| `--space-12` | 48px | Section inner rhythm |
-| `--space-16` | 64px | Standard section separation |
-| `--space-24` | 96px | Major section separation |
-| `--space-32` | 128px | Hero breathing room |
-
-### Grid
-- Max content width: 1280px.
-- Desktop: 12-column grid with 24px gutters.
-- Tablet: 8-column grid with 20px gutters.
-- Mobile: one-column flow with 16px side padding.
-- Breakpoints: 640px, 768px, 1024px, 1280px.
-- Prefer asymmetric editorial layouts over repeated equal three-card rows.
+- Base unit: 4px.
+- Tokens: `--space-1` 4px, `--space-2` 8px, `--space-3` 12px, `--space-4` 16px, `--space-5` 20px, `--space-6` 24px, `--space-8` 32px, `--space-10` 40px, `--space-12` 48px, `--space-16` 64px, `--space-20` 80px, `--space-24` 96px, `--space-30` 120px.
+- Content width: 1360px. Reading width: 680px. Outer page inset: `clamp(12px, 2vw, 28px)`.
+- Desktop uses a 12-column grid. Tablet and mobile collapse according to reading order rather than preserving visual symmetry.
+- Section rhythm is generous but varied: compact proof bands separate larger narrative sections.
 
 ## 5. Components
 
-### Primary Navigation
-- **Structure**: fixed `nav`, brand link, desktop disclosure buttons, mobile menu button, menu panel.
-- **Variants**: default, scrolled, desktop, mobile.
-- **States**: default, hover, active, focus-visible, expanded, dismissed.
-- **Accessibility**: named nav landmark, `aria-expanded`, `aria-controls`, Escape dismissal, keyboard reachability, 4.5:1 text contrast.
-- **Motion**: menu opacity plus transform only; reduced motion removes transitions.
+### Frame
+- **Structure**: centered max-width container with responsive outer inset.
+- **States**: static.
+- **Accessibility**: never clips focus rings.
+- **Layout**: document-flow shell.
 
-### Evidence Rail
-- **Structure**: small label, one evidence or uncertainty statement, contextual link.
-- **Variants**: source-led, safety-led, uncertainty-led.
-- **States**: default, hover, focus.
-- **Accessibility**: readable as normal content; never communicates an unsupported badge.
+### ArrowLink
+- **Structure**: text plus circular arrow control.
+- **Variants**: accent fill, dark fill, outline.
+- **States**: hover translates the icon once; active compresses; focus uses a visible accent outline; disabled is not used for links.
+- **Accessibility**: descriptive link text; icon is decorative.
+- **Motion**: 180ms transform and color only.
 
-### Full-bleed Clinic Hero
-- **Structure**: full-width real consultation image, dark teal gradient overlay, eyebrow, single clear promise, primary consultation CTA, secondary treatment CTA, and three trust points.
-- **Variants**: homepage overlay, campaign landing page.
-- **Rules**: imagery establishes care context but does not imply that StemCell.my owns the facility or depicts a named clinician; no guarantees, outcome percentages, or unsupported credentials.
-- **Accessibility**: meaningful hero image has descriptive alt text; text contrast is checked against the overlay at desktop and mobile; CTAs remain reachable above the fold.
+### EditorialCard
+- **Structure**: optional index/eyebrow, heading, copy, optional media/action.
+- **Variants**: white, soft, dark, photographic.
+- **States**: interactive cards reveal an arrow and lift media by 2%; static cards do not animate.
+- **Accessibility**: full-card links keep meaningful names; contrast meets WCAG AA.
+- **Layout**: grid item; radius 12px, matching the Bexon reference rather than pill-heavy UI.
 
-### Treatment Index
-- **Structure**: editorial split layout with a sticky section intro and a compact list of image thumbnails, pathway label, treatment title, qualified description, and directional link.
-- **Variants**: homepage index, full treatment directory.
-- **States**: default, hover, focus-visible.
-- **Accessibility**: each row is one link target; thumbnail alt may be decorative when adjacent text supplies the same meaning; no horizontal overflow at 375px.
+### SectionHeading
+- **Structure**: eyebrow, large heading, optional supporting paragraph/action.
+- **States**: static.
+- **Accessibility**: logical heading order, balanced text only above mobile width.
+- **Layout**: split heading/supporting-copy composition.
 
-### Topic Card
-- **Structure**: image or tonal media, topic label, qualified description, route link.
-- **Variants**: featured, compact, education, safety.
-- **States**: default, hover, focus-visible.
-- **Accessibility**: one meaningful link target, descriptive alt text, no named clinician/patient implication from stock imagery.
+### FAQRow
+- **Structure**: native button header and region answer.
+- **States**: collapsed, expanded, hover, focus.
+- **Accessibility**: `aria-expanded`, `aria-controls`, keyboard-native button.
+- **Motion**: opacity/translate reveal; no animated layout properties.
 
-### Clinical Pathway
-- **Structure**: numbered steps from question to independent assessment and follow-up.
-- **Variants**: four-step desktop rail, stacked mobile list.
-- **Accessibility**: semantic ordered list; numbers are supplementary, not the only labels.
-
-### CTA
-- **Structure**: clear action, honest expectation, secondary education link.
-- **Variants**: information request, education, consultation route, clinic verification.
-- **Rules**: no “free”, “guaranteed”, “right therapy”, response-time promise, or medical-advisor claim without evidence.
+### Navigation
+- **Structure**: floating brand bar, desktop links, Explore popover, consultation CTA, mobile disclosure.
+- **States**: transparent-on-hero, solid-on-scroll, popover open, mobile open, focus.
+- **Accessibility**: Escape closes overlays; outside click closes popover; all controls have names.
+- **Motion**: 200ms opacity/translate and surface transition.
 
 ## 6. Motion & Interaction
 
-| Type | Duration | Easing | Usage |
+| Type | Duration | Easing | Use |
 |---|---:|---|---|
-| Micro | 120ms | ease-out | Press and color response |
-| Standard | 240ms | ease-in-out | Dropdown and mobile panel |
-| Emphasis | 520ms | `cubic-bezier(0.16, 1, 0.3, 1)` | Hero entry |
+| Micro | 180ms | ease-out | Arrows, buttons, focus-adjacent feedback |
+| Standard | 280ms | ease-in-out | Menus and FAQ content |
+| Emphasis | 650ms | `cubic-bezier(.16,1,.3,1)` | Hero load and viewport reveal |
 
-### Rules
-- Animate only `transform` and `opacity`; never animate layout properties.
-- Never use `whileInView`; existing motion uses mount-time `animate` and should remain deterministic.
-- Every motion must clarify an entrance or interaction state.
-- Respect `prefers-reduced-motion` and keep keyboard focus visible.
+Only `transform`, `opacity`, and color/filter transitions are animated. Viewport reveals use CSS view timelines where supported, with static content as the fallback. `prefers-reduced-motion` disables reveals, marquee movement, and image scaling. The one signature moment is the hero copy settling over the framed photograph.
 
 ## 7. Depth & Surface
 
-### Strategy
-Mixed, with tonal shifts as the primary separation and restrained tinted shadows for elevated menus and primary media.
+Strategy: mixed tonal shift and restrained shadow. Most separation comes from `canvas → soft → surface → ink`; only floating navigation and menus use shadow. Photography receives directional overlays, never glass cards stacked over glass cards.
 
-- Cards use tonal backgrounds or subtle borders; avoid border-plus-shadow on every card.
-- Dropdowns use a white surface, `--border-default`, and a teal-tinted shadow.
-- Hero media uses a real image with a soft cream/teal atmospheric layer, not a flat geometric focal object.
-- Clinic hero media is full-bleed and uses a dark teal readability gradient; below-the-fold media uses restrained rounded crops and lazy loading.
-- Keep corner radii varied: 12px controls, 20px cards, 32px feature media.
+| Level | Value | Usage |
+|---|---|---|
+| Subtle | `0 1px 0 rgba(12,30,33,.06)` | Card separation |
+| Floating | `0 18px 50px rgba(12,30,33,.14)` | Navigation popover |
 
 ## 8. Accessibility Constraints & Accepted Debt
 
-### Constraints
-- WCAG 2.2 AA target: 4.5:1 body text, 3:1 large text, visible focus for every interactive element, full keyboard navigation, no horizontal overflow at 375px, and reduced-motion support.
-- Content must distinguish education from treatment availability and must not imply that StemCell.my is a clinic, regulator, certifier, or hospital network without documentary evidence.
-- Medical uncertainty is part of the interface: qualify claims and link to relevant education, safety, legal, or verification pages.
+- Target WCAG 2.2 AA: 4.5:1 body text, 3:1 large text and UI boundaries.
+- Visible keyboard focus on every interactive element; touch targets at least 44px.
+- Mobile copy uses natural line wrapping and avoids isolated one-word display lines.
+- Reduced-motion preferences are respected globally.
+- No fake doctors, patient outcomes, partner endorsements, or unsupported clinic metrics are presented.
 
 ### Accepted Debt
-| Item | Location | Why accepted | Exit |
-|---|---|---|---|
-| Existing inner-page copy still needs a full evidence pass | `src/app/**` | User requested homepage and navbar first; audit has identified the backlog | Remediate route-by-route after homepage sign-off |
-| Existing image CDN is Unsplash | `src/components/home/**` | It is already configured and prevents a new asset pipeline in this iteration | Replace only when licensed clinical assets are supplied |
+
+None.

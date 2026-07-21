@@ -49,3 +49,4 @@ codedb.snapshot
 /*.gif
 
 .codegraph
+/ref/
