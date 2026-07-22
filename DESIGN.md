@@ -51,7 +51,7 @@ Mona Sans is self-hosted from `ref/` via `next/font/local`; system sans is the f
 - **Structure**: centered max-width container with responsive outer inset.
 - **States**: static.
 - **Accessibility**: never clips focus rings.
-- **Layout**: document-flow shell.
+- **Layout**: document-flow shell. The full desktop link row appears from 1344px; below it, the mobile disclosure prevents the brand, links, and CTA from colliding.
 
 ### ArrowLink
 - **Structure**: text plus circular arrow control.

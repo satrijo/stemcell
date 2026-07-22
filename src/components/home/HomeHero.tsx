@@ -49,8 +49,8 @@ export function HomeHero() {
   }, []);
 
   return (
-    <section className="px-[var(--page-inset)] pb-8 pt-3">
-      <div className="relative min-h-[calc(100dvh-1.5rem)] overflow-hidden rounded-xl bg-[var(--ink)] text-white">
+    <section className="min-h-dvh">
+      <div className="relative min-h-dvh overflow-hidden bg-[var(--ink)] text-white">
         {/* Carousel images */}
         <AnimatePresence initial={false}>
           <motion.div
@@ -94,7 +94,7 @@ export function HomeHero() {
           ))}
         </div>
 
-        <div className="relative mx-auto flex min-h-[calc(100dvh-1.5rem)] max-w-[85rem] flex-col justify-end px-5 pb-28 pt-32 sm:px-9 sm:pb-10 lg:px-14 lg:pb-12">
+        <div className="relative mx-auto flex min-h-dvh max-w-[85rem] flex-col justify-end px-5 pb-28 pt-32 sm:px-9 sm:pb-10 lg:px-14 lg:pb-12">
           <div className="max-w-[54rem] animate-[reveal-in_800ms_cubic-bezier(.16,1,.3,1)_both]">
             <p className="eyebrow flex items-center gap-3 text-[var(--accent-pale)]">
               <span className="size-2 rounded-full bg-[var(--accent)]" />

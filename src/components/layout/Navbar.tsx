@@ -105,7 +105,7 @@ export default function Navbar({ overlay = false }: NavbarProps) {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-8 min-[84rem]:flex">
           <Link
             href="/stem-cell-education/"
             className="text-sm font-medium text-[var(--text)] transition-colors hover:text-[var(--accent-dark)]"
@@ -183,7 +183,7 @@ export default function Navbar({ overlay = false }: NavbarProps) {
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
-          className="flex size-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--ink)] lg:hidden"
+          className="flex size-11 items-center justify-center rounded-full border border-[var(--border)] text-[var(--ink)] min-[84rem]:hidden"
         >
           {menuOpen ? (
             <X aria-hidden="true" className="size-5" />
@@ -201,7 +201,7 @@ export default function Navbar({ overlay = false }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-[var(--border)] px-4 pb-5 pt-3 lg:hidden"
+            className="border-t border-[var(--border)] px-4 pb-5 pt-3 min-[84rem]:hidden"
           >
             {[
               ["Education hub", "/stem-cell-education/"],
